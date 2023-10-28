@@ -74,6 +74,30 @@ pipeline {
                 }
             }   
         }
+        
+        def imageName = 'valaxy01.jfrog.io/valaxy-docker/ttrend'
+   		def version   = '2.0.2'
+    	stage(" Docker Build ") {
+      		steps {
+        		script {
+           			echo '<--------------- Docker Build Started --------------->'
+           			app = docker.build(imageName+":"+version)
+           			echo '<--------------- Docker Build Ends --------------->'
+        		}
+      		}
+    	}
+
+        stage (" Docker Publish "){
+        	steps {
+            	script {
+               		echo '<--------------- Docker Publish Started --------------->'  
+                	docker.withRegistry(registry, 'jfrog'){
+                    app.push()
+                	}    
+                echo '<--------------- Docker Publish Ended --------------->'  
+            	}
+        	}
+    	}
   		
     }
 }
