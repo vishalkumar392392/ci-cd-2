@@ -1,4 +1,6 @@
 def registry = 'https://vishalkumar392.jfrog.io'
+def imageName = 'vishalkumar392.jfrog.io/vishalkumar392-docker-local/devops2'
+def version   = '2.1.1'
 pipeline {
     agent {
         node {
@@ -74,9 +76,6 @@ pipeline {
                 }
             }   
         }
-        
-        def imageName = 'valaxy01.jfrog.io/valaxy-docker/ttrend'
-   		def version   = '2.0.2'
     	stage(" Docker Build ") {
       		steps {
         		script {
