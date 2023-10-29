@@ -17,7 +17,7 @@ spec:
       - name: jfrog
       containers:
       - name:  vishalkumar392-rtp
-        image: vishalkumar392.jfrog.io/vishalkumar392-docker/devops2:2.1.1
+        image: vishalkumar392.jfrog.io/vishalkumar392-docker/devops2:2.1.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
