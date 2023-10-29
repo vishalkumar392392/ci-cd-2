@@ -93,7 +93,16 @@ pipeline {
                 	docker.withRegistry(registry, 'jfrog'){
                     app.push()
                 	}    
-                echo '<--------------- Docker Publish Ended --------------->'  
+                	echo '<--------------- Docker Publish Ended --------------->'  
+            	}
+        	}
+    	}
+        stage ("Deploy"){
+        	steps {
+            	script {
+               		echo '<--------------- Docker Publish Started --------------->'  
+                	sh './deploy.sh'    
+                	echo '<--------------- Docker Publish Ended --------------->'  
             	}
         	}
     	}
