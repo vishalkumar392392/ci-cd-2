@@ -100,7 +100,8 @@ pipeline {
         stage ("Deploy"){
         	steps {
             	script {
-               		echo '<--------------- Docker Publish Started --------------->'  
+               		echo '<--------------- Docker Publish Started --------------->'
+               		sh 'chmod +x deploy.sh'  
                 	sh './deploy.sh'    
                 	echo '<--------------- Docker Publish Ended --------------->'  
             	}
