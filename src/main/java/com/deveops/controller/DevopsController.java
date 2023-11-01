@@ -10,9 +10,14 @@ public class DevopsController {
 	public String getMessage() {
 		return "Hello World.....";
 	}
-	
+
 	@GetMapping("/course")
 	public String course() {
 		return "Deveops course 2";
+	}
+
+	@GetMapping("/api")
+	public String api() {
+		return "New API";
 	}
 }
